@@ -13,6 +13,7 @@ let {
 
 let indexRouter = require('./routes/index');
 let bookRouter = require('./routes/book');
+let fileRouter = require('./routes/file');
 
 let app = express();
 
@@ -30,6 +31,7 @@ app.use(baseUrl + '/', jsonFormat)
 
 app.use(baseUrl + '/', indexRouter);
 app.use(baseUrl + '/book', bookRouter);
+app.use(baseUrl + '/file', fileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

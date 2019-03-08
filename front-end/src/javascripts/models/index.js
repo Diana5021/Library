@@ -2,10 +2,10 @@ import request from '@utils/request'
 
 //获取书籍信息
 
-const getBookItems = (data) => {
+const getBookItems = () => {
     return request({
         url: '/api/v1/book/items',
-        data
+        
     })
 }
 
@@ -50,7 +50,7 @@ const updateBookItem = (data) => {
     })
 }
 
-export {
+export default {
     getBookItems,
     postBookItem,
     getBookItem,

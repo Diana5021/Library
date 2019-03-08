@@ -1,0 +1,74 @@
+<h5 class="mt-4 mb-2">
+    <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">
+            添加图书
+        </font>
+    </font>
+</h5>
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">BOOK</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form" id="publish-form">
+        <div class="card-body">
+        <div class="form-group">
+            <label for="item-title">BookCover</label>
+            <button type="button" class="btn btn-primary img-btn">上传图片封面</button>
+            <input type="file" class="hidden" id="item-img" >
+            <div class="row hidden publish-img-box" >
+                <div class="info-box col-xs-3">       
+                <div class="info-box-content">
+                    <img width="100%" src="" alt="">
+                </div>
+                <!-- /.info-box-content -->
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bookName">Name</label>
+            <input type="text" class="form-control" id="bookName" placeholder="请输入图书名称" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="bookAuthor">Author</label>
+            <input type="text" class="form-control" id="bookAuthor" placeholder="请输入作者" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="bookType">Type</label>
+            <input type="text" class="form-control" id="bookType" placeholder="请输入图书类型" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="bookPress">Press</label>
+            <input type="text" class="form-control" id="bookPress" placeholder="请输入出版社" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="bookTotalNum">TotalNum</label>
+            <input type="text" class="form-control" id="bookTotalNum" placeholder="请输入图书总数" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="bookPublishTime">PublishTime</label>
+            <input class="form-control" id="bookPublishTime" placeholder="请输入图书出版日期(YYYY-MM-DD)" autocomplete="off">
+        </div>  
+        <div class="form-group">
+            <label for="bookStorageDate">StorageDate</label>
+            <input class="form-control" id="bookStorageDate" placeholder="请输入图书入库日期(YYYY-MM-DD)" autocomplete="off">
+        </div>     
+        
+        
+        <div class="form-group">
+            <label for="bookAbstract">Abstract</label>
+            <textarea required  class="form-control" id="bookAbstract" placeholder="请输入图书简介"></textarea>
+        </div>
+          
+        
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

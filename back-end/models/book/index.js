@@ -48,6 +48,12 @@ const getBookItems = () => {
     return Items.find({})
 }
 
+//插入数据
+const postBookItem = (params) => {
+    return Items.insertMany(params)
+}
+
 module.exports = {
     getBookItems,
+    postBookItem,
 }

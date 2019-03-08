@@ -11,7 +11,6 @@ const request = (options) => {
                     // 除请求失败处理
                     $.Toast('Warning', '数据请求失败', 'warning')
                     console.log('fail')
-    
                 }
             },
             error (error) {

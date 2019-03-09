@@ -7,6 +7,7 @@ module.exports = {
     mode: 'none',
     entry: {
         index: './src/javascripts/index',
+        login: './src/javascripts/login'
     },
     output: {
         filename: '[name].js',
@@ -30,6 +31,11 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html',
             chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/login.html',
+            filename: 'login.html',
+            chunks: ['login']
         }),
     ],
     module: {

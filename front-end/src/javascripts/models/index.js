@@ -2,10 +2,10 @@ import request from '@utils/request'
 
 //获取书籍信息
 
-const getBookItems = () => {
+const getBookItems = (data) => {
     return request({
         url: '/api/v1/book/items',
-        
+        data,
     })
 }
 
@@ -30,11 +30,11 @@ const getBookItem = (id) => {
 }
 
 //删除信息
-const deleteBookItem = (data) => {
+const deleteBookItem = (id) => {
     return request({
         url: 'api/v1/book/item',
         type: 'delete',
-        data: { id }
+        data: { id },
     })
 }
 

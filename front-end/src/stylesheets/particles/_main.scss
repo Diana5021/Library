@@ -7,9 +7,6 @@
 }
 .book-items {
     table {
-        th {
-            text-align: center;
-        }
         tr td {
             text-align: center;
             overflow: hidden;
@@ -32,9 +29,23 @@
 }
 
 #bookDetial{
+    button{
+        width:100px;
+        float: right;
+        margin-top: 0;
+        margin-right: 10px
+    }
     .form-group{
         div,p{
             padding: 0 50px
         }
+
+    }
+}
+.search{
+    justify-content: flex-end;
+    margin: 5px 10px;
+    .col-sm-2{
+        margin-right: -7px
     }
 }

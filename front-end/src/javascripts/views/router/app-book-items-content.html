@@ -26,9 +26,9 @@
     </thead>
     <tbody>
         {{each items}}
-        <tr role="row" class="odd">
+        <tr role="row" class="odd" href="{{$value._id}}">
             <td><img src="{{ $value.cover }}" alt="" width="60px" height="70px"></td>
-            <td><a href="#/book/detail/{{$value._id}}">{{ $value.name }}</a></td>
+            <td><a href="#/book/detial/{{$value._id}}">{{ $value.name }}</a></td>
             <td>{{ $value.author }}</td>
             <td>{{ $value.abstract.slice(0,15) + '...' }}</td>
             <td>{{ $value.type }}</td>

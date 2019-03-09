@@ -1,8 +1,12 @@
 import appBookItem from '@views/router/app-book-items.html'
 import appBookItemContent from '@views/router/app-book-items-content.html'
 import bookModel from '@models'
+import angel from '@utils/angel'
 
-
+let pageSize = 10
+let pageNo = 1
+let pages = null
+let search = ''
 
 const render = async (req, res, next) => {
     changeStyle()
@@ -10,8 +14,17 @@ const render = async (req, res, next) => {
     await renderItems()
 
     //实例化分页器
+    searchHandler()
+
     paginationHandler()
+
+
+    $('#example2 tr').click(function(){
+        let itemId = $(this).attr('href')
+        angel.emit('go', '/book/detial/'+itemId)
+    })
     
+  
 }
 
 function changeStyle() {
@@ -19,12 +32,23 @@ function changeStyle() {
     $('#item').children('a').addClass('active')
 }
 
+function searchHandler() {
+    $('#search-btn').click(async function () {
+        let val = $('#table-search').val()
+        if ( val === search ) return false
+        search = val
+        pageNo = 1 
+        await renderItems()
+        paginationHandler()
+    })
+}
+
 function paginationHandler () {
-    $('#movie-items-pagination').createPage({
-        pageNum: 10,
-        current: 1,
+    $('#book-items-pagination').createPage({
+        pageNum: pages.totalPage,
+        current: pageNo,
         backfun: function(e) {
-            //pageNo = e.current
+            pageNo = e.current
             renderItems()
         }
     });
@@ -32,13 +56,21 @@ function paginationHandler () {
 
 function renderItems() {
     return new Promise(async (resolve) => {
-        let data = await bookModel.getBookItems()
-        $('#movie-items-content').html(template.compile(appBookItemContent)({
-            items: data
+        let data = await bookModel.getBookItems({
+            pageSize,
+            pageNo,
+            search
+        })
+        pages = data.pages
+        $('#book-items-content').html(template.compile(appBookItemContent)({
+            items: data.items
         }))
         resolve(data)
     })
 }
+
+
+
 
 export default {
     render

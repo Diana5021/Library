@@ -4,52 +4,58 @@
         <div class="card card-primary card-outline">
         <div class="card-header ">
             <div class="row">
-            <h3 class="card-title col-md-6">百年孤独</h3>
+            <div class="col-md-6">
+                <a class="back" href="#">BACK</a>
+            </div>
+            <div class="col-md-6" id="bookOperation">
+                <button type="button" class="btn btn-block btn-danger" id="bookDelete">Delete</button>
+                <button type="button" class="btn btn-block btn-info" id="bookRevise">Revise</button>
+            </div>
             </div>
         </div> <!-- /.card-body -->
         <div class="card-body">
             <div class="form-group">
-                <label for="bookCover">Cover</label>
+                <label for="bookCover">Name</label>
                 <div>
-                <img class="bookCover" src="http://10.60.18.149:3000/images/bookCover/bainiangudu-1552055432792.jpg" alt="" width="100px" height="80px">
+                    <h1 class="card-title">{{detail.name}}</h1>
                 </div>
             </div>
             <div class="form-group">
-                <label>Name</label>
-                <p>百年孤独</p>
+                <label for="bookCover">Cover</label>
+                <div>
+                <img class="bookCover" src="{{detail.cover}}" alt="" width="100px" height="80px">
+                </div>
             </div>
             <div class="form-group">
                 <label>Author</label>
-                <p>百年孤独</p>
+                <p>{{detail.author}}</p>
             </div>
             <div class="form-group">
                 <label>Type</label>
-                <p>百年孤独</p>
+                <p>{{detail.type}}</p>
             </div>
             <div class="form-group">
                 <label>Press</label>
-                <p>百年孤独</p>
+                <p>{{detail.press}}</p>
             </div>
             <div class="form-group">
                 <label>TotalNum</label>
-                <p>百年孤独</p>
+                <p>{{detail.totalNum}}</p>
             </div>
             <div class="form-group">
                 <label>PublishTime</label>
-                <p>百年孤独</p>
+                <p>{{detail.publishTime}}</p>
             </div>  
             <div class="form-group">
                 <label>StorageDate</label>
-                <p>百年孤独</p>
+                <p>{{detail.storageDate}}</p>
                 <p></p>
             </div>  
             <div class="form-group">
                 <label>Abstract</label>
-                <div>百年孤独</div>
+                <div>{{@ detail.abstract}}</div>
             </div> 
         </div><!-- /.card-body -->
         </div>
     </div><!-- /.container-fluid -->
 </section>
-  
-  

@@ -44,16 +44,61 @@ const getTotalPage = (query) => {
 //             })
 // }
 
-const getBookItems = () => {
-    return Items.find({})
+const getBookItems = async ({
+    pageSize,
+    pageNo,
+    search
+}) => {
+    
+    let query = search ? {
+        name: new RegExp(search, 'g')
+    } : {}
+    let count = await getTotalPage(query)
+
+    let pages = {
+        totalNo: count,
+        totalPage: Math.ceil(count / pageSize)
+    }
+    return Items.find(query)
+                .limit(~~pageSize)
+                .skip((pageNo - 1) * pageSize)
+            .then(res => {
+                return {
+                    items: res,
+                    pages
+                }
+            })
+   
 }
 
 //插入数据
 const postBookItem = (params) => {
     return Items.insertMany(params)
 }
+//获取某个
+const getBookItemById = (id) => {
+    return Items.find({_id: id})
+}
+//删除某个
+const deleteBookItem = (id) => {
+    return Items.deleteOne({_id: id})
+}
+//更新某个
+const updateBookItem = (data) =>{
+    let itemId = data.id
+    delete data.id
+    if ( !data.cover ){
+        delete data.cover
+    }
+    return Items.updateOne({_id: itemId},data)
+}
+
+
 
 module.exports = {
     getBookItems,
     postBookItem,
+    getBookItemById,
+    deleteBookItem,
+    updateBookItem
 }

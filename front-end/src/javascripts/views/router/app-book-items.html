@@ -5,12 +5,21 @@
     <!-- /.card-header -->
     <div class="card-body">
         <div class="row">
-            <div class="col-sm-12" id="movie-items-content">
+                <div class="input-group input-group-sm search">
+                    <div class="col-sm-2">
+                        <input type="text" id="table-search" name="table_search" class="form-control" placeholder="Search" autocomplete="off">
+                    </div>
+                    <div class="input-group-btn">
+                        <button type="button" id="search-btn" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                      
+            <div class="col-sm-12" id="book-items-content">
                 
             </div>
         </div>
     </div>
-    <div class="box-footer clearfix zxf_pagediv" id="movie-items-pagination">
+    <div class="box-footer clearfix zxf_pagediv" id="book-items-pagination">
 
     </div>
 </div>

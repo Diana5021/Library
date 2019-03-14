@@ -19,31 +19,6 @@ const getTotalPage = (query) => {
     return Items.find(query).countDocuments()
 }
 
-//获取信息
-// const getBookItems = async ({
-//     // pageSize,
-//     // pageNo,
-//     search,
-//     // sort,
-//     // sortBy
-// }) => {
-//     let query = search ? {
-//         title: new RegExp(search, 'g')
-//     } : {}
-//     let count = await getTotalPage(query)
-
-//     let pages = {
-//         totalNo: count,
-//     }
-//     return Items.find(query)
-//             .then(res => {
-//                 return {
-//                     items: res,
-//                     pages
-//                 }
-//             })
-// }
-
 const getBookItems = async ({
     pageSize,
     pageNo,

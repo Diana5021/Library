@@ -15,7 +15,30 @@ const status = {
     'illegal': {
         code: '501',
         msg: '请上传正确的图片格式'
-    }
+    },
+    'username exist': {
+        code: '204',
+        msg: '用户名已经存在'
+    },
+    'nickname exist': {
+        code: '204',
+        msg: '昵称已经存在'
+    },
+    'username unexist': {
+        code: '204',
+        msg: '用户名不存在'
+    },
+    'unreal password': {
+        code: '204',
+        msg: '密码不正确'
+    },
+    'code wrong': {
+        code: '206',
+        msg: '验证码不正确'
+    },
+    'not login': {
+        code: '207',
+        msg: '没有登录，请重新登录'
+    },
 }
-
-module.exports = status
+module.exports = status 

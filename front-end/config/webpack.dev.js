@@ -80,7 +80,7 @@ module.exports = {
         alias: {
             "@": path.resolve(__dirname, '../src'),
             "@controllers": path.resolve(__dirname, '../src/javascripts/controllers'),
-            //"@modules": path.resolve(__dirname, '../src/javascripts/modules'),
+            "@modules": path.resolve(__dirname, '../src/javascripts/modules'),
             //"@api": path.resolve(__dirname, '../src/javascripts/api'),
             "@models": path.resolve(__dirname, '../src/javascripts/models'),
             "@utils": path.resolve(__dirname, '../src/javascripts/utils'),
